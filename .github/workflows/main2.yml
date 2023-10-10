@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v2
         with:
           toolchain: ${{ matrix.rust }}
           profile: minimal
@@ -61,7 +61,7 @@ jobs:
             tar -czf "${{ matrix.archive-name }}" LICENSE README.md hello-rust
           fi
       - name: Upload archive
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.archive-name }}
           path: archive/${{ matrix.archive-name }}
