@@ -61,7 +61,7 @@ jobs:
             tar -czf "${{ matrix.archive-name }}" LICENSE README.md hello-rust
           fi
       - name: Upload archive
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.archive-name }}
           path: archive/${{ matrix.archive-name }}
